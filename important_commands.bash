@@ -18,3 +18,6 @@ command : rustup self uninstall
 
 # rustup command to open the rust official documentation : 
 command : rustup doc
+
+# command to create a new rust project : 
+command : cargo new project_name
