@@ -21,3 +21,53 @@ command : rustup doc
 
 # command to create a new rust project : 
 command : cargo new project_name
+
+
+# compiling rust program from the terminal : 
+command : cd src -- > if outside the src 
+        : rustc main.rs
+        : ./main -- > to run the executable
+
+# command to format the rust code : 
+command : rustfmt main.rs
+
+# comman to check the system spec according to that .exe file is created
+command : file main
+
+# global format command  , it formats all the rust files in the directory ,
+# try to apply from top directory or parent directory
+command : cargo fmt
+
+/*
+Running `cargo fmt` works only when executed from the top-level project directory
+— i.e., the directory that contains the `Cargo.toml` file.
+
+This is because `cargo fmt` uses the project's metadata and structure defined in `Cargo.toml`
+to locate and format all Rust source files correctly.
+
+If you want to format multiple Rust files in one project (e.g., multiple binaries),
+your project directory should follow a structure like this:
+
+my_project/
+├── Cargo.toml           <-- Required: tells Rust it's a project root
+├── src/
+│   └── main.rs          <-- Default binary entry point
+└── src/bin/
+    ├── tool1.rs         <-- Additional binaries
+    └── tool2.rs
+
+With this layout, running `cargo fmt` from the `my_project/` directory
+will format:
+  - main.rs
+  - tool1.rs
+  - tool2.rs
+  - any other .rs files under the project
+
+⚠️ Note:
+- Running `cargo fmt` from a subdirectory (like `src/`) may only format local files.
+- Without a `Cargo.toml` file in the top-level directory, `cargo fmt` will fail.
+
+Conclusion:
+📍 Always run `cargo fmt` from the root project directory where `Cargo.toml` exists
+to format all Rust files at once.
+*/
