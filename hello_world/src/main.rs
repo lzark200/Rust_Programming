@@ -4,4 +4,5 @@ fn main() {
     println!("This is my first rust code");
 
     println!("I am the rust developer");
-}
+    println!("hello world") 
+    

@@ -71,3 +71,15 @@ Conclusion:
 📍 Always run `cargo fmt` from the root project directory where `Cargo.toml` exists
 to format all Rust files at once.
 */
+
+
+command : cargo build  -> to create unoptimized build
+command : cargo build --release  -> it creates the optimized build and ready for the production
+command : cargo clean   -> It deletes all the target folder created in the program and gives us a fresh start, but it runs inside the rust project only because it searches 
+for the .toml file, so simply running the clean command in the parent directory will not remove the target folder from the each of the 
+child rust project sub-directories
+command : ./target/release/<project_name> -> to run the build
+command : cargo run -> this command build+run the code.This creates unoptimized build
+command : cargo run --quiet ->this command does similar thing that cargo run does but not shows any intermediates results
+-> it directly shows the output
+command : 
