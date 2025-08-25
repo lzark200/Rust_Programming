@@ -1,4 +1,4 @@
 fn main() {
-    let x = 45  ; 
+    let mut x = 45  ; 
     x = 78 ; 
 }
